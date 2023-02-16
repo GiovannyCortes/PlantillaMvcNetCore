@@ -1,6 +1,10 @@
+using PlantillaMvcNetCore.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//builder.Services.AddTransient<IRepositoryHospitales, RepositoryHospitalesSQL>();
+builder.Services.AddTransient<IRepositoryHospitales, RepositoryHospitalesOCL>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -21,6 +25,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Hospitales}/{action=ShowHospitales}/{id?}");
 
 app.Run();

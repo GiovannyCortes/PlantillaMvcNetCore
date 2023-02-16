@@ -1,0 +1,19 @@
+﻿@model Hospital
+
+<h1 style="text-align: center;" class="text-info">
+    Detalles Hospitales
+</h1>
+
+<dl>
+    <dt>@Model.Nombre - @Model.HospitalCod</dt>
+    <dd>@Model.Direccion</dd>
+
+    <dt>Teléfono:</dt>
+    <dd>@Model.Telefono</dd>
+
+    <dt>Camas:</dt>
+    <dd>@Model.NumCama</dd>
+</dl>
+
+@Html.ActionLink("Volver", "ShowHospitales", "Hospitales", null, 
+                 new { @class = "btn btn-secondary", style = "font-weight: bold;"})

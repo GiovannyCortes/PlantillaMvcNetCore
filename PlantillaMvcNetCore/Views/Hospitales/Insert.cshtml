@@ -1,0 +1,26 @@
+﻿<h1 style="text-align: center;" class="text-success">
+    Insert Hospital
+</h1>
+
+<form method="post">
+    <input type="hidden" class="form-control" name="hospitalcod"/>
+
+    <label class="form-label mt-3">Nombre</label>
+    <input type="text" class="form-control" name="nombre" required/>
+
+    <label class="form-label mt-3">Dirección</label>
+    <input type="text" class="form-control" name="direccion" required/>
+
+    <label class="form-label mt-3">Teléfono</label>
+    <input type="text" class="form-control" name="telefono" required/>
+
+    <label class="form-label mt-3">Número de camas</label>
+    <input type="text" class="form-control" name="numcama" required/>
+
+    <button class="btn btn-success w-100 my-3">
+        Insert
+    </button>
+</form>
+
+@Html.ActionLink("Volver", "ShowHospitales", "Hospitales", null,
+                 new { @class = "btn btn-secondary", style = "font-weight: bold;"})

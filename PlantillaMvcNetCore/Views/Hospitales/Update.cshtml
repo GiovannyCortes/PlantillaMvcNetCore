@@ -1,0 +1,28 @@
+﻿@model Hospital
+
+<h1 style="text-align: center;" class="text-warning">
+    Update Hospital
+</h1>
+
+<form method="post">
+    <input type="number" value="@Model.HospitalCod" class="form-control" name="hospitalcod" disabled/>
+
+    <label class="form-label mt-3">Nombre</label>
+    <input type="text" value="@Model.Nombre" class="form-control" name="nombre" required/>
+
+    <label class="form-label mt-3">Dirección</label>
+    <input type="text" value="@Model.Direccion" class="form-control" name="direccion" required/>
+
+    <label class="form-label mt-3">Teléfono</label>
+    <input type="text" value="@Model.Telefono" class="form-control" name="telefono" required/>
+    
+    <label class="form-label mt-3">Número de camas</label>
+    <input type="text" value="@Model.NumCama" class="form-control" name="numcama" required/>
+
+    <button class="btn btn-warning w-100 my-3">
+        Update
+    </button>
+</form>
+
+@Html.ActionLink("Volver", "ShowHospitales", "Hospitales", null,
+                 new { @class = "btn btn-secondary", style = "font-weight: bold;"})
