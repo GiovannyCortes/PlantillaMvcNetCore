@@ -58,7 +58,5 @@ namespace PlantillaMvcNetCore.Repositories {
         void DeleteSala(int hospital_cod);
         #endregion
 
-
-
     }
 }

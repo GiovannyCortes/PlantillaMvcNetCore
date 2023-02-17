@@ -27,34 +27,6 @@ using System.Data.SqlClient;
  */
 #endregion
 
-#region PROCEDURES HOSPITAL ORACLE
-/*
-    CREATE OR REPLACE PROCEDURE SP_INSERT_HOSPITAL 
-    (P_NOMBRE HOSPITAL.NOMBRE%TYPE, P_DIRECCION HOSPITAL.DIRECCION%TYPE, P_TELEFONO HOSPITAL.TELEFONO%TYPE, P_CAMAS HOSPITAL.NUM_CAMA%TYPE)
-    AS P_HOSPITAL_COD INT;
-    BEGIN
-      SELECT MAX(HOSPITAL_COD)+1 INTO P_HOSPITAL_COD FROM HOSPITAL;
-      INSERT INTO HOSPITAL VALUES(P_HOSPITAL_COD, P_NOMBRE, P_DIRECCION, P_TELEFONO, P_CAMAS);
-      COMMIT;
-    END;
-
-    CREATE OR REPLACE PROCEDURE SP_UPDATE_HOSPITAL
-    (P_HOSPITAL_COD HOSPITAL.HOSPITAL_COD%TYPE, P_NOMBRE HOSPITAL.NOMBRE%TYPE, P_DIRECCION HOSPITAL.DIRECCION%TYPE, P_TELEFONO HOSPITAL.TELEFONO%TYPE, P_CAMAS HOSPITAL.NUM_CAMA%TYPE)
-    AS
-    BEGIN
-      UPDATE HOSPITAL SET NOMBRE = P_NOMBRE, DIRECCION = P_DIRECCION, TELEFONO = P_TELEFONO, NUM_CAMA = P_CAMAS WHERE HOSPITAL_COD = P_HOSPITAL_COD;
-      COMMIT;
-    END;
-
-    CREATE OR REPLACE PROCEDURE SP_DELETE_HOSPITAL (P_HOSPITAL_COD HOSPITAL.HOSPITAL_COD%TYPE)
-    AS
-    BEGIN
-      DELETE FROM HOSPITAL WHERE HOSPITAL_COD = P_HOSPITAL_COD;
-      COMMIT;
-    END;
- */
-#endregion
-
 namespace PlantillaMvcNetCore.Repositories {
     public class RepositoryHospitalesSQL : IRepositoryHospitales {
 
@@ -70,8 +42,8 @@ namespace PlantillaMvcNetCore.Repositories {
                   tabla_sala;
 
         public RepositoryHospitalesSQL() {
-            string connectionString = 
-                @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;Persist Security Info=True;User ID=SA;Password=MCSD2023";
+            string connectionString =
+                @"Data Source=LOCALHOST\DESARROLLO;Initial Catalog=HOSPITAL;Persist Security Info=True;User ID=SA;Password=MCSD2023";
             this.connection = new SqlConnection(connectionString);
             this.command = new SqlCommand();
             this.command.Connection = this.connection;

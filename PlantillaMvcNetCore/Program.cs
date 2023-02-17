@@ -1,10 +1,15 @@
 using PlantillaMvcNetCore.Repositories;
+using PlantillaMvcNetCore.Tools;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-//builder.Services.AddTransient<IRepositoryHospitales, RepositoryHospitalesSQL>();
-builder.Services.AddTransient<IRepositoryHospitales, RepositoryHospitalesOCL>();
+builder.Services.AddTransient<IRepositoryHospitales, RepositoryHospitalesSQL>();
+builder.Services.AddTransient<IHospitalTools, HospitalToolsSQL>();
+
+//builder.Services.AddTransient<IRepositoryHospitales, RepositoryHospitalesOCL>();
+//builder.Services.AddTransient<IHospitalTools, HospitalToolsOCL>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
